@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ECOPOWER - Next-generation sustainable renewable energy solutions. Solar, Wind, Hydropower, and Biomass systems engineering for a zero-carbon planet." />
+  <title>ECOPOWER — Powering Tomorrow, Sustainably</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PAGE PRELOADER -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-ring"></div>
+      <svg class="preloader-logo-icon" viewBox="0 0 40 40" fill="none">
+        <path d="M20 2C10.06 2 2 10.06 2 20C2 29.94 10.06 38 20 38C29.94 38 38 29.94 38 20C38 10.06 29.94 2 20 2Z" stroke="#0B8F64" stroke-width="2" stroke-dasharray="4 4"/>
+        <path d="M14 21L21 8L19 18H26L18 32L20 21H14Z" fill="#C5F36B" />
+      </svg>
+      <span class="preloader-text">ECOPOWER</span>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" aria-label="ECOPOWER Home">
+        <div class="logo-symbol">
+          <!-- Leaf + Lightning Combined SVG -->
+          <svg viewBox="0 0 36 36" fill="none" class="brand-svg">
+            <path d="M7 29C7 29 11 15 26 8C26 8 28 22 17 28C13 30.18 9 29.5 7 29Z" fill="#0B8F64" />
+            <path d="M19 5L13 17H19L16 27L25 14H18.5L21.5 5H19Z" fill="#C5F36B" stroke="#063B2B" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <span class="brand-name">ECO<span>POWER</span></span>
+      </a>
+
+      <nav class="nav-links" id="navMenu" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#sources" class="nav-link">Energy Sources</a>
+        <a href="#benefits" class="nav-link">Benefits</a>
+        <a href="#tips" class="nav-link">Conservation</a>
+        <a href="#calculator" class="nav-link">Calculator</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#sources" class="btn-cta-mobile">Explore Energy</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#sources" class="btn-cta glow-effect">
+          <span>Explore Energy</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="btn-icon">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg-overlay"></div>
+    <canvas id="particleCanvas" class="hero-canvas"></canvas>
+
+    <div class="container hero-content">
+      <div class="hero-badge reveal-fade">
+        <span class="badge-dot"></span>
+        Next-Generation Clean Energy Architecture
+      </div>
+
+      <h1 class="hero-title reveal-fade">
+        POWERING TOMORROW,<br />
+        <span class="gradient-text">SUSTAINABLY.</span>
+      </h1>
+
+      <p class="hero-subtitle reveal-fade">
+        Discover clean energy solutions that protect our planet, empower communities, and create a brighter future for generations to come.
+      </p>
+
+      <div class="hero-cta-group reveal-fade">
+        <a href="#sources" class="btn-primary glow-effect">
+          <span>Explore Renewable Energy</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
+        <a href="#about" class="btn-secondary">
+          <span>Discover Our Mission</span>
+        </a>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="hero-stats-grid reveal-fade">
+        <div class="stat-card glass-card">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+          </div>
+          <div class="stat-info">
+            <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
+            <div class="stat-label">Clean Energy Generation</div>
+          </div>
+        </div>
+
+        <div class="stat-card glass-card">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          </div>
+          <div class="stat-info">
+            <div class="stat-value">-<span class="counter" data-target="82">0</span>%</div>
+            <div class="stat-label">Lower Carbon Emissions</div>
+          </div>
+        </div>
+
+        <div class="stat-card glass-card">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </div>
+          <div class="stat-info">
+            <div class="stat-value"><span class="counter" data-target="140">0</span>k+</div>
+            <div class="stat-label">Greener Future Projects</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated Scroll-Down Indicator -->
+    <a href="#sources" class="scroll-indicator" aria-label="Scroll to Energy Sources">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>SCROLL DOWN</span>
+    </a>
+  </section>
+
+  <!-- ENERGY SOURCES SECTION -->
+  <section class="section-padding sources-section" id="sources">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">HARNESSING ELEMENTS</span>
+        <h2 class="section-title">EXPLORE THE POWER OF NATURE</h2>
+        <p class="section-lead">
+          Pioneering zero-carbon technologies engineered to replace fossil fuels while guaranteeing baseline energy reliability across world grids.
+        </p>
+      </div>
+
+      <div class="sources-grid">
+        <!-- CARD 1: SOLAR -->
+        <article class="source-card">
+          <div class="source-card-inner">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1000&q=80" alt="Photovoltaic solar panels capturing golden sunlight" loading="lazy" />
+              <div class="media-tag">Solar Energy</div>
+            </div>
+            <div class="card-body">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              </div>
+              <h3 class="card-title">Solar Energy</h3>
+              <p class="card-desc">
+                Solar energy converts sunlight into electricity using photovoltaic technology with zero greenhouse emissions during active generation.
+              </p>
+              <div class="card-applications">
+                <span class="pill">Homes</span>
+                <span class="pill">Industries</span>
+                <span class="pill">Streetlights</span>
+                <span class="pill">Solar Farms</span>
+              </div>
+              <button class="btn-card-link open-modal" data-modal="solar">
+                <span>Discover More</span>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: WIND -->
+        <article class="source-card">
+          <div class="source-card-inner">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1000&q=80" alt="Aerodynamic wind turbines against blue sky" loading="lazy" />
+              <div class="media-tag">Wind Energy</div>
+            </div>
+            <div class="card-body">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+              </div>
+              <h3 class="card-title">Wind Energy</h3>
+              <p class="card-desc">
+                Wind energy uses moving air to generate clean electricity through aerodynamic wind turbine rotors powering electromagnetic generators.
+              </p>
+              <div class="card-applications">
+                <span class="pill">Wind Farms</span>
+                <span class="pill">Grid Supply</span>
+                <span class="pill">Rural Power</span>
+                <span class="pill">Offshore Arrays</span>
+              </div>
+              <button class="btn-card-link open-modal" data-modal="wind">
+                <span>Discover More</span>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3: HYDROPOWER -->
+        <article class="source-card">
+          <div class="source-card-inner">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=80" alt="Hydroelectric dam and rushing clean river" loading="lazy" />
+              <div class="media-tag">Hydropower</div>
+            </div>
+            <div class="card-body">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              </div>
+              <h3 class="card-title">Hydropower</h3>
+              <p class="card-desc">
+                Hydropower generates electricity using the mechanical potential of moving or falling water through high-efficiency hydro turbines.
+              </p>
+              <div class="card-applications">
+                <span class="pill">Hydro Dams</span>
+                <span class="pill">Irrigation</span>
+                <span class="pill">Peak Shaving</span>
+                <span class="pill">Pumped Storage</span>
+              </div>
+              <button class="btn-card-link open-modal" data-modal="hydro">
+                <span>Discover More</span>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4: BIOMASS -->
+        <article class="source-card">
+          <div class="source-card-inner">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80" alt="Organic biomass and sustainable circular agriculture" loading="lazy" />
+              <div class="media-tag">Biomass Energy</div>
+            </div>
+            <div class="card-body">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              </div>
+              <h3 class="card-title">Biomass Energy</h3>
+              <p class="card-desc">
+                Biomass energy is produced using organic materials such as agricultural waste, forestry residues, and dedicated energy crops converted cleanly.
+              </p>
+              <div class="card-applications">
+                <span class="pill">Biogas</span>
+                <span class="pill">Biofuels</span>
+                <span class="pill">Thermal Heat</span>
+                <span class="pill">Co-gen Power</span>
+              </div>
+              <button class="btn-card-link open-modal" data-modal="biomass">
+                <span>Discover More</span>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section class="section-padding benefits-section" id="benefits">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">PLANETARY IMPACT</span>
+        <h2 class="section-title">WHY CLEAN ENERGY MATTERS</h2>
+        <p class="section-lead">
+          Transitioning to renewable systems yields profound environmental, economic, and geopolitical resilience for human civilization.
+        </p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-number">01</div>
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15a4 4 0 0 0 4 4h11a3 3 0 0 0 0-6h-1a5 5 0 0 0-9.9-1A3.5 3.5 0 0 0 3 15z"/><path d="M9 19v2m6-2v2"/></svg>
+          </div>
+          <h3 class="benefit-title">Reduced Pollution</h3>
+          <p class="benefit-desc">
+            Replaces particulate-heavy fossil fuel combustion, sharply decreasing smog, respiratory illnesses, and toxic acid deposition in natural freshwater basins.
+          </p>
+          <div class="benefit-metric">
+            <strong>-64%</strong> Air Particulates in Decarbonized Grids
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-number">02</div>
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 16V8"/></svg>
+          </div>
+          <h3 class="benefit-title">Lower Carbon Emissions</h3>
+          <p class="benefit-desc">
+            Directly curtails lifecycle carbon dioxide and methane atmospheric load, helping maintain international climate goals under 1.5°C targets.
+          </p>
+          <div class="benefit-metric">
+            <strong>Zero CO₂</strong> Direct Emissions During Operation
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-number">03</div>
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="benefit-title">Natural Resource Protection</h3>
+          <p class="benefit-desc">
+            Eliminates devastating strip mining, hydraulic fracturing, and marine oil spills, conserving precious topsoil, biodiversity, and wild ecological reserves.
+          </p>
+          <div class="benefit-metric">
+            <strong>100%</strong> Inexhaustible Kinetic & Solar Inputs
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-number">04</div>
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3 class="benefit-title">Energy Security</h3>
+          <p class="benefit-desc">
+            Diversifies national generation portfolios, ending reliance on volatile foreign fossil-fuel cartels and shielding communities from market price shocks.
+          </p>
+          <div class="benefit-metric">
+            <strong>Decentralized</strong> Resilient Independent Microgrids
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENERGY CONSERVATION TIPS -->
+  <section class="section-padding tips-section" id="tips">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">DAILY STEWARDSHIP</span>
+        <h2 class="section-title">SMALL ACTIONS. BIG IMPACT.</h2>
+        <p class="section-lead">
+          Systemic change begins at the plug point. Practical conservation habits minimize wasteful strain on power grids and accelerate decarbonization.
+        </p>
+      </div>
+
+      <!-- Hero Callout Quote -->
+      <div class="quote-banner">
+        <div class="quote-icon">⚡</div>
+        <p class="quote-text">
+          “THE GREENEST ENERGY IS THE ENERGY WE DON'T WASTE.”
+        </p>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">💡</div>
+          <div class="tip-content">
+            <h4>Switch Off Inactive Loads</h4>
+            <p>Turn off lighting, workstation monitors, and entertainment sets when leaving a room.</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">🔆</div>
+          <div class="tip-content">
+            <h4>Deploy Solid-State LEDs</h4>
+            <p>LED lamps consume up to 80% less energy than standard incandescents and last 25x longer.</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">⭐</div>
+          <div class="tip-content">
+            <h4>High-Efficiency Appliances</h4>
+            <p>Select ENERGY STAR or Class A+++ rated heat pumps, induction stoves, and refrigeration.</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">🪟</div>
+          <div class="tip-content">
+            <h4>Harness Natural Daylight</h4>
+            <p>Design around daylighting principles to minimize artificial illumination until dusk.</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">☀️</div>
+          <div class="tip-content">
+            <h4>Install Rooftop Solar</h4>
+            <p>Convert underutilized rooftop footprints into localized clean self-generation stations.</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">🔌</div>
+          <div class="tip-content">
+            <h4>Eliminate Phantom Power</h4>
+            <p>Unplug transformer bricks and chargers that drain passive standby electricity 24/7.</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">🚲</div>
+          <div class="tip-content">
+            <h4>E-Mobility & Active Transit</h4>
+            <p>Favor electric buses, bicycles, or metro commuting over single-occupant gas vehicles.</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">🌡️</div>
+          <div class="tip-content">
+            <h4>Smart Thermostat Calibration</h4>
+            <p>Adjust climate control by just 1°C to reduce heating and air-conditioning draw by up to 8%.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR SECTION -->
+  <section class="section-padding calculator-section" id="calculator">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">SIMULATION SUITE</span>
+        <h2 class="section-title">INTERACTIVE ENERGY SAVINGS CALCULATOR</h2>
+        <p class="section-lead">
+          Calculate your annual monetary savings and carbon reduction potential by optimizing consumption patterns and integrating clean energy.
+        </p>
+      </div>
+
+      <div class="calc-wrapper glass-panel">
+        <div class="calc-inputs">
+          <h3 class="calc-box-title">Enter Usage Metrics</h3>
+
+          <div class="form-group">
+            <label for="monthlyKwh">Monthly Electricity Consumption (kWh)</label>
+            <div class="input-with-unit">
+              <input type="number" id="monthlyKwh" value="650" min="50" max="10000" step="10" />
+              <span class="unit-badge">kWh / mo</span>
+            </div>
+            <input type="range" id="monthlyKwhRange" min="50" max="2500" value="650" class="range-slider" />
+          </div>
+
+          <div class="form-group">
+            <label for="costPerKwh">Electricity Cost per kWh ($ / €)</label>
+            <div class="input-with-unit">
+              <input type="number" id="costPerKwh" value="0.18" min="0.01" max="2.00" step="0.01" />
+              <span class="unit-badge">$/kWh</span>
+            </div>
+            <input type="range" id="costPerKwhRange" min="0.05" max="0.60" step="0.01" value="0.18" class="range-slider" />
+          </div>
+
+          <div class="form-group">
+            <label for="reductionTarget">Target Reduction / Solar Offset</label>
+            <div class="slider-header">
+              <span>Goal:</span>
+              <span class="target-val-pill" id="targetValueText">30%</span>
+            </div>
+            <input type="range" id="reductionTarget" min="5" max="90" step="5" value="30" class="range-slider" />
+          </div>
+
+          <button id="recalculateBtn" class="btn-calculate glow-effect">
+            <span>Refresh Calculation</span>
+          </button>
+        </div>
+
+        <div class="calc-results">
+          <div class="results-header">
+            <h3>Forecasted Savings Dashboard</h3>
+            <span class="disclaimer-chip">Estimated Values Only</span>
+          </div>
+
+          <div class="results-grid">
+            <div class="result-tile">
+              <div class="result-icon-small">💳</div>
+              <span class="result-label">Current Monthly Bill</span>
+              <div class="result-number" id="resCurrentBill">$117.00</div>
+              <span class="result-sub">baseline spend</span>
+            </div>
+
+            <div class="result-tile highlight">
+              <div class="result-icon-small">🌱</div>
+              <span class="result-label">Est. Monthly Savings</span>
+              <div class="result-number" id="resMonthlySavings">$35.10</div>
+              <span class="result-sub">reduction per billing cycle</span>
+            </div>
+
+            <div class="result-tile highlight-gold">
+              <div class="result-icon-small">💰</div>
+              <span class="result-label">Est. Yearly Savings</span>
+              <div class="result-number" id="resYearlySavings">$421.20</div>
+              <span class="result-sub">cumulative 12-month value</span>
+            </div>
+
+            <div class="result-tile">
+              <div class="result-icon-small">🌍</div>
+              <span class="result-label">Annual CO₂ Abatement</span>
+              <div class="result-number" id="resCo2Offset">920 kg</div>
+              <span class="result-sub">equivalent greenhouse offset</span>
+            </div>
+          </div>
+
+          <!-- Progress Visualization Bar -->
+          <div class="savings-progress-box">
+            <div class="progress-bar-labels">
+              <span>New Projected Monthly Bill</span>
+              <strong id="resProjectedBill">$81.90 / mo</strong>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="progressFill" style="width: 70%;"></div>
+            </div>
+          </div>
+
+          <p class="calc-disclaimer-note">
+            * Note: Values shown are mathematical projections based on regional averages (0.392 kg CO₂/kWh grid intensity). Actual solar yields and utility rate structures will vary according to geographical tariff schedules.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US SECTION -->
+  <section class="section-padding about-section" id="about">
+    <div class="container">
+      <div class="about-split-layout">
+        <div class="about-visual">
+          <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1200&q=80" alt="Sustainable futuristic eco plant facility and clean fields" loading="lazy" />
+            <div class="floating-eco-badge">
+              <span class="eco-num">100%</span>
+              <span class="eco-text">Committed to Zero Emissions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <span class="section-tag">WHO WE ARE</span>
+          <h2 class="section-title">OUR MISSION IS A GREENER PLANET</h2>
+          <p class="about-lead">
+            We believe sustainable energy is the foundation of a cleaner, healthier, and more responsible future. Our mission is to spread awareness about renewable energy, encourage energy conservation, and inspire people to adopt environmentally friendly practices.
+          </p>
+
+          <div class="pillars-list">
+            <div class="pillar-item">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+              <div class="pillar-text">
+                <h4>Our Vision</h4>
+                <p>A thriving global civilization sustained indefinitely by clean, distributed natural forces without resource exhaustion.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div class="pillar-text">
+                <h4>Our Mission</h4>
+                <p>To demystify clean power through engineering education, state-of-the-art modeling tools, and high-efficiency systems.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="pillar-text">
+                <h4>Our Commitment</h4>
+                <p>Transparent environmental stewardship, ethical research methodologies, and equalized access to clean power solutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & ENQUIRY SECTION -->
+  <section class="section-padding contact-section" id="contact">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">INITIATE COLLABORATION</span>
+        <h2 class="section-title">LET'S BUILD A GREENER FUTURE TOGETHER</h2>
+        <p class="section-lead">
+          Connect with our clean energy consultants for site feasibility assessments, commercial installations, or renewable energy transition advisory.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information Side -->
+        <div class="contact-info-panel glass-card">
+          <h3>Get In Touch</h3>
+          <p>Have an inquiry regarding solar, wind, or hybrid decentralization? Our systems engineers respond within one business day.</p>
+
+          <div class="contact-methods">
+            <div class="contact-method-item">
+              <div class="method-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <strong>Global Headquarters (Sample Placeholder)</strong>
+                <p>ECOPOWER Campus, 100 Innovation Way, Silicon Valley, CA 94025, United States</p>
+              </div>
+            </div>
+
+            <div class="contact-method-item">
+              <div class="method-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <strong>Direct Telephone (Sample Placeholder)</strong>
+                <p>+1 (800) 555-0199 / +1 (415) 555-0142</p>
+              </div>
+            </div>
+
+            <div class="contact-method-item">
+              <div class="method-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong>Electronic Inquiries (Sample Placeholder)</strong>
+                <p>contact@ecopower-energy.example.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="operational-notice">
+            <span class="status-indicator"></span>
+            <span>24/7 Grid Support & Consultation Operations</span>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper glass-card">
+          <form id="enquiryForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Sarah Jenkins" required />
+                <span class="error-msg" id="nameError">Please enter your full name.</span>
+              </div>
+
+              <div class="form-field">
+                <label for="emailAddress">Email Address *</label>
+                <input type="email" id="emailAddress" name="emailAddress" placeholder="sarah@example.com" required />
+                <span class="error-msg" id="emailError">Please enter a valid email address.</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="phoneNumber">Phone Number *</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+1 (555) 000-0000" required />
+                <span class="error-msg" id="phoneError">Please enter a valid contact phone number.</span>
+              </div>
+
+              <div class="form-field">
+                <label for="energySource">Interested Energy Source *</label>
+                <select id="energySource" name="energySource" required>
+                  <option value="" disabled selected>Select an Energy Solution</option>
+                  <option value="Solar Energy">Solar Photovoltaic Systems</option>
+                  <option value="Wind Energy">Wind Generation Solutions</option>
+                  <option value="Hydropower">Hydropower & Micro-Hydro</option>
+                  <option value="Biomass">Biomass & Circular Biofuels</option>
+                  <option value="Hybrid Integration">Hybrid Integrated Microgrid</option>
+                </select>
+                <span class="error-msg" id="sourceError">Please select an energy category.</span>
+              </div>
+            </div>
+
+            <div class="form-field full-width">
+              <label for="messageText">Enquiry Message *</label>
+              <textarea id="messageText" name="message" rows="4" placeholder="Detail your site specifications, current power demands, or project targets..." required></textarea>
+              <span class="error-msg" id="messageError">Please enter your inquiry details (minimum 10 characters).</span>
+            </div>
+
+            <button type="submit" class="btn-submit glow-effect" id="submitBtn">
+              <span>Transmit Enquiry</span>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+            </button>
+          </form>
+
+          <!-- Form Success Notice (Displayed via JS upon client validation) -->
+          <div class="form-feedback-card" id="formSuccessModal" style="display: none;" role="alert">
+            <div class="success-icon-badge">✓</div>
+            <h4>Thank You for Connecting!</h4>
+            <p>
+              Your consultation request has been prepared in this demonstration environment. In a live production configuration, your project specifications would now be routed to our engineering desk.
+            </p>
+            <div class="submitted-summary" id="submittedSummary"></div>
+            <button type="button" class="btn-secondary btn-reset-form" id="resetFormBtn">Submit Another Enquiry</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-col brand-col">
+          <div class="brand-logo footer-logo">
+            <div class="logo-symbol">
+              <svg viewBox="0 0 36 36" fill="none" class="brand-svg">
+                <path d="M7 29C7 29 11 15 26 8C26 8 28 22 17 28C13 30.18 9 29.5 7 29Z" fill="#0B8F64" />
+                <path d="M19 5L13 17H19L16 27L25 14H18.5L21.5 5H19Z" fill="#C5F36B" stroke="#063B2B" stroke-width="0.5"/>
+              </svg>
+            </div>
+            <span class="brand-name">ECO<span>POWER</span></span>
+          </div>
+          <p class="footer-text">
+            Architecting next-generation renewable infrastructure, carbon accounting frameworks, and sustainable community energy systems globally.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn" class="social-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.76.79 1.76 1.76c0 .97-.79 1.76-1.76 1.76m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter / X" class="social-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="GitHub" class="social-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#home">Home Experience</a></li>
+            <li><a href="#sources">Energy Sources</a></li>
+            <li><a href="#benefits">Ecological Benefits</a></li>
+            <li><a href="#tips">Conservation Tips</a></li>
+            <li><a href="#calculator">Savings Calculator</a></li>
+            <li><a href="#about">About Our Mission</a></li>
+            <li><a href="#contact">Contact & Enquiry</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Energy Technologies -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Clean Solutions</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#sources">Photovoltaic Systems</a></li>
+            <li><a href="#sources">Aerodynamic Turbines</a></li>
+            <li><a href="#sources">Hydroelectric Dams</a></li>
+            <li><a href="#sources">Biogas & Circular Heat</a></li>
+            <li><a href="#calculator">Grid Storage & Batteries</a></li>
+            <li><a href="#calculator">Carbon Accounting Audits</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Stay Informed</h4>
+          <p class="footer-text">Receive our bi-weekly dispatch on breakthroughs in global clean grid transformations.</p>
+          <form class="footer-newsletter" id="newsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing to our renewable newsletter!');">
+            <input type="email" placeholder="Your work email..." required />
+            <button type="submit" aria-label="Subscribe to newsletter">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-notice">
+          &copy; 2026 ECOPOWER. All Rights Reserved. Powering a Sustainable Future.
+        </p>
+        <button class="back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
+          <span>Back to Top</span>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL FOR DETAILED SOURCE INFORMATION -->
+  <div class="modal-overlay" id="infoModal" aria-hidden="true" role="dialog">
+    <div class="modal-card glass-panel">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
+      <div class="modal-content" id="modalDynamicContent">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
